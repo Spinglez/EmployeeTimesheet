@@ -17,12 +17,10 @@
     role: "",
     startDate: "",
     monthlyRate: "",
-    dateAdded: firebase.database.ServerValue.TIMESTAMP,
+    dateAdded: null,
   }
 
-  database.ref().push({
-    employee: employeeData,
-  })
+  
 
 
 
@@ -34,29 +32,22 @@ console.log("I'm linked.");
 
 function appendEmployeeData() {
 	console.log("I submit!");
-	console.log($(this));
 	employeeData.employeeName = $('#name').val().trim();
 	employeeData.role = $('#role').val().trim();
 	employeeData.startDate = $('#start-date').val().trim();
-	employeeData.monthlyRate = $('#rate').val().trim();
+	employeeData.monthlyRate = $('#monthly-rate').val().trim();
+	employeeData.dateAdded = firebase.database.ServerValue.TIMESTAMP;
+	console.log(employeeData);
 
-	// if (employeeData.employeeName && employeeData.role && employeeData.startDate && employeeData.monthlyRate)
-	// {
-	// 	database.push({
-	// 		'name':  employeeData.employeeName,
-	// 		'role':  employeeData.role,
-	// 		'start': employeeData.startDate,
-	// 		'rate':  employeeData.monthlyRate
-	// 	})
-	// }
-	// else
-	// {
-	// 	console.log("You need to enter all fields!");
-	// }
+
+	database.ref().push({
+	    employee: employeeData,
+	  });
+
 }
 
 $('#submit').on('click', function(event) {
-	$('#submit').preventDefault();
+	event.preventDefault();
 	console.log('Calling appendEmployeeData');
 	appendEmployeeData();
 })
