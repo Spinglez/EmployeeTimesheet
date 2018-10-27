@@ -37,7 +37,7 @@ console.log("I'm linked.");
 function appendEmployeeData() {
 	console.log("I submit!");
 	console.log($(this));
-	employeeData.employeeName = = $('#name').val().trim();
+	employeeData.employeeName = $('#name').val().trim();
 	employeeData.role = $('#role').val().trim();
 	employeeData.startDate = $('#start-date').val().trim();
 	employeeData.monthlyRate = $('#rate').val().trim();
@@ -58,4 +58,3 @@ function appendEmployeeData() {
 }
 
 $(document.documentBody).on('click', '#submit', appendEmployeeData)
-
