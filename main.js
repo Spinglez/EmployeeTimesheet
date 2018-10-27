@@ -17,21 +17,19 @@
     role: "",
     startDate: "",
     monthlyRate: "",
+    dateAdded: firebase.database.ServerValue.TIMESTAMP,
   }
 
-  database.ref().set({
-    name: employeeData.employeeName,
-    role: employeeData.role,
-    start: employeeData.startDate,
-    rate: employeeData.monthlyRate,
+  database.ref().push({
+    employee: employeeData,
   })
 
-  database.ref().on("value", function(snapshot){
-    console.log(snapshot.val().name)
-    console.log(snapshot.val().role)
-    console.log(snapshot.val().start)
-    console.log(snapshot.val().rate)
+
+
+  database.ref().on("child_added", function(childSnapshot){
+    console.log(childSnapshot.val().employee);
   })
+  
 console.log("I'm linked.");
 
 function appendEmployeeData() {
@@ -42,19 +40,23 @@ function appendEmployeeData() {
 	employeeData.startDate = $('#start-date').val().trim();
 	employeeData.monthlyRate = $('#rate').val().trim();
 
-	if (employeeData.employeeName && employeeData.role && employeeData.startDate && employeeData.monthlyRate)
-	{
-		database.push({
-			'name':  employeeData.employeeName,
-			'role':  employeeData.role,
-			'start': employeeData.startDate,
-			'rate':  employeeData.monthlyRate
-		})
-	}
-	else
-	{
-		console.log("You need to enter all fields!");
-	}
+	// if (employeeData.employeeName && employeeData.role && employeeData.startDate && employeeData.monthlyRate)
+	// {
+	// 	database.push({
+	// 		'name':  employeeData.employeeName,
+	// 		'role':  employeeData.role,
+	// 		'start': employeeData.startDate,
+	// 		'rate':  employeeData.monthlyRate
+	// 	})
+	// }
+	// else
+	// {
+	// 	console.log("You need to enter all fields!");
+	// }
 }
 
-$(document.documentBody).on('click', '#submit', appendEmployeeData)
+$('#submit').on('click', function(event) {
+	$('#submit').preventDefault();
+	console.log('Calling appendEmployeeData');
+	appendEmployeeData();
+})
