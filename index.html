@@ -5,20 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Employee TimeSheet</title>
-    <script></script>
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 </head>
 <body>
-  <div class="container">
-    <div class="jumbotron">
-      <h1 class="display-3">Employee Data Management</h1>
-      <p class="lead">A Comprehensive Directory of Employee Billable Hours</p>
-      <hr class="m-y-md">
-    </div>
-  </div>
-
+        <div class="jumbotron" style="background-color: black ; color: white;">
+                <h1 class="text-center">
+                  <strong>
+                    <i class="fa fa-newspaper-o"></i> Employee Data Management</strong>
+                    <p>A Comprehensive Directory of Employee Billable Hours</p>
+        </h1>
+     </div>
+  <div>Current Employees</div>
   <table class="table">
     <thead>
       <tr>
@@ -47,22 +44,23 @@
   </table>
 
   <form>
+      <div>Add Employees</div>
   <div class="row">
     <div class="col">
         <p>Employee Name</p>
-      <input id="name" type="text" class="form-control" placeholder="">
+      <input id="name" type="text" class="form-control" placeholder="Employee Name">
     </div>
     <div class="col">
         <p>Role</p>
-      <input id="role" type="text" class="form-control" placeholder="Last name">
+      <input id="role" type="text" class="form-control" placeholder="Role">
     </div>
     <div class="col">
         <p>Start Date</p>
-        <input id="start-date" type="text" class="form-control" placeholder="Last name">
+        <input id="start-date" type="number" class="form-control" placeholder="Start Date">
     </div>
     <div class="col">
         <p>Monthly Rate</p>
-        <input id="monthly-rate" type="text" class="form-control" placeholder="Last name">
+        <input id="monthly-rate" type="text" class="form-control" placeholder="Monthly Rate">
     </div>
     <button type="submit" class="btn btn-primary">Submit</button>
   </div>
