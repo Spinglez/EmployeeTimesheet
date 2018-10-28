@@ -21,21 +21,23 @@
      </div>
 
     <div class="mini-titles">Current Employees</div>
-    <table class="table">
-        <thead>
-        <tr>
-            <th scope="col">Employee Name</th>
-            <th scope="col">Role</th>
-            <th scope="col">Start Date</th>
-            <th scope="col">Months Worked</th>
-            <th scope="col">Monthly Rate ($)</th>
-            <th scope="col">Total Billed</th>
-        </tr>
-        </thead>
-        <tbody>
-          <!-- removed the row to we can append to the body -->
-        </tbody>
-    </table>
+    <div class="table-responsive">
+      <table class="table">
+          <thead>
+          <tr>
+              <th scope="col">Employee Name</th>
+              <th scope="col">Role</th>
+              <th scope="col">Start Date</th>
+              <th scope="col">Months Worked</th>
+              <th scope="col">Monthly Rate ($)</th>
+              <th scope="col">Total Billed</th>
+          </tr>
+          </thead>
+          <tbody>
+            <!-- removed the row to we can append to the body -->
+          </tbody>
+      </table>
+    </div>
 
     <form>
         <div class="mini-titles">Add Employees</div>
@@ -56,7 +58,7 @@
             <p>Monthly Rate</p>
             <input id="monthly-rate" type="text" class="form-control" placeholder="Monthly Rate">
         </div>
-        <button id="submit" class="btn btn-primary">Submit</button>
+        <button id="submit" class="btn btn-primary mt-3">Submit</button>
     </div>
     </form>
 </div>
