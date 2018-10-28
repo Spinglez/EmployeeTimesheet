@@ -20,14 +20,21 @@
     dateAdded: null,
   }
 
-  
-
-
-
   database.ref().on("child_added", function(childSnapshot){
-    console.log(childSnapshot.val().employee);
-  })
-  
+    console.log("test snap" + childSnapshot.val().employee);
+    let newRow = $('<tr>');
+    let td = $('<td>')
+    $('.table').append(newRow);
+    $(newRow).append('<td>' + childSnapshot.val().employee.employeeName + '</td>');
+    $(newRow).append('<td>' + childSnapshot.val().employee.role + '</td>');
+    $(newRow).append('<td>' +childSnapshot.val().employee.startDate + '</td>');
+    $(newRow).append('<td>' +childSnapshot.val().employee.monthlyRate + '</td>');
+    $(newRow).append('<td>' +childSnapshot.val().employee.dateAdded + '</td>');
+    console.log(childSnapshot.val().employee.employeeName);
+  }, function(errorObject) {
+      console.log("Errors handled: " + errorObject.code);
+    });
+
 console.log("I'm linked.");
 
 function appendEmployeeData() {
