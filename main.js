@@ -28,8 +28,13 @@
     $(newRow).append('<td>' + childSnapshot.val().employee.employeeName + '</td>');
     $(newRow).append('<td>' + childSnapshot.val().employee.role + '</td>');
     $(newRow).append('<td>' +childSnapshot.val().employee.startDate + '</td>');
+    // need to add the calculation row here for months worked
     $(newRow).append('<td>' +childSnapshot.val().employee.monthlyRate + '</td>');
-    $(newRow).append('<td>' +childSnapshot.val().employee.dateAdded + '</td>');
+    // total billed calculation goes here
+
+    // ignore the stuff below it's just informational.
+    // $(newRow).append('<td>' +childSnapshot.val().employee.dateAdded + '</td>');
+    // I was making a new row the date added we dont need that in here leaving it for your guys info.
     console.log(childSnapshot.val().employee.employeeName);
   }, function(errorObject) {
       console.log("Errors handled: " + errorObject.code);
